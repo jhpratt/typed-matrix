@@ -1,0 +1,17 @@
+{
+  "name": "typed-matrix",
+  "version": "0.1.0",
+  "main": "dist/Matrix.js",
+  "repository": "https://github.com/jhpratt/typed-matrix.git",
+  "author": "Jacob Pratt <the.z.cuber@gmail.com>",
+  "license": "MIT",
+  "types": "Matrix.d.ts",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0"
+  }
+}
