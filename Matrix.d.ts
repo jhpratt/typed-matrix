@@ -1,16 +1,33 @@
-class Matrix<T> {
+interface Matrix<T> {
   { [key: number]: T };
-  constructor(cols: number, rows: number);
-  buffer: ArrayBuffer;
-  length: number;
+  readonly buffer: ArrayBuffer;
+  readonly length: number;
 }
 
-export class Int8Matrix extends Matrix<Int8Array> {};
-export class Uint8Matrix extends Matrix<Uint8Array> {};
-export class Uint8ClampedMatrix extends Matrix<Uint8ClampedArray> {};
-export class Int16Matrix extends Matrix<Int16Array> {};
-export class Uint16Matrix extends Matrix<Uint16Array> {};
-export class Int32Matrix extends Matrix<Int32Array> {};
-export class Uint32Matrix extends Matrix<Uint32Array> {};
-export class Float32Matrix extends Matrix<Float32Array> {};
-export class Float64Matrix extends Matrix<Float64Array> {};
+export class Int8Matrix implements Matrix<Int8Array> {
+  constructor(cols: number, rows: number);
+};
+export class Uint8Matrix implements Matrix<Uint8Array> {
+  constructor(cols: number, rows: number);
+};
+export class Uint8ClampedMatrix implements Matrix<Uint8ClampedArray> {
+  constructor(cols: number, rows: number);
+};
+export class Int16Matrix implements Matrix<Int16Array> {
+  constructor(cols: number, rows: number);
+};
+export class Uint16Matrix implements Matrix<Uint16Array> {
+  constructor(cols: number, rows: number);
+};
+export class Int32Matrix implements Matrix<Int32Array> {
+  constructor(cols: number, rows: number);
+};
+export class Uint32Matrix implements Matrix<Uint32Array> {
+  constructor(cols: number, rows: number);
+};
+export class Float32Matrix implements Matrix<Float32Array> {
+  constructor(cols: number, rows: number);
+};
+export class Float64Matrix implements Matrix<Float64Array> {
+  constructor(cols: number, rows: number);
+};

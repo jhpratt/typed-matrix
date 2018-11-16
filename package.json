@@ -1,6 +1,6 @@
 {
   "name": "typed-matrix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/Matrix.js",
   "repository": "https://github.com/jhpratt/typed-matrix.git",
   "author": "Jacob Pratt <the.z.cuber@gmail.com>",
