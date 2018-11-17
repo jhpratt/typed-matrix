@@ -2,6 +2,7 @@ interface Matrix<T> {
   { [key: number]: T };
   readonly buffer: ArrayBuffer;
   readonly length: number;
+  toString(): string;
 }
 
 export class Int8Matrix implements Matrix<Int8Array> {
