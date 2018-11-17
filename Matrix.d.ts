@@ -2,6 +2,8 @@ interface Matrix<T> {
   { [key: number]: T };
   readonly buffer: ArrayBuffer;
   readonly length: number;
+  readonly cols: number;
+  readonly rows: number;
   toString(): string;
 }
 

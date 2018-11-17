@@ -1,15 +1,19 @@
 class Matrix {
   #array;
-  #cols;
 
   constructor(type, x, y) {
-    this.#array = new type(x * y);
-    this.#cols = x;
+    const array = new type(x * y + 2);
+
+    // assign rows, cols to last 2 indexes
+    array[x * y] = x;
+    array[x * y + 1] = y;
+
+    this.#array = array;
   }
 
   get(n) {
     const type = this.#array.constructor;
-    const cols = this.#cols;
+    const { cols } = this;
     return new type(this.buffer, cols * n * type.BYTES_PER_ELEMENT, cols);
   }
 
@@ -21,11 +25,20 @@ class Matrix {
     return this.buffer.length;
   }
 
+  get cols() {
+    const array = this.#array;
+    return array[array.length - 2];
+  }
+
+  get rows() {
+    const array = this.#array;
+    return array[array.length - 1];
+  }
+
   toString() {
     const array = this.#array;
-    const { constructor: { name }, length } = array;
-    const cols = this.#cols;
-    const rows = length / cols;
+    const { constructor: { name }} = array;
+    const [cols, rows] = array.slice(-2);
 
     let str = `${name.replace('Array', 'Matrix')} [`;
     for (let i = 0; i < rows; ++i) {
